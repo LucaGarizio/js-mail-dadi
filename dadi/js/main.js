@@ -4,24 +4,24 @@
 
 
 
-
+// var declaration to start the game
 const gameStart = document.getElementById("start");
 
-
+// add event on click
 gameStart.addEventListener("click", 
 
     function() {
 
-    // Generare un numero random da 1 a 6 per il giocatore 
+    // Create userplayer random number from 1 to 6
         const userNumber = Math.floor(Math.random() * 6) +1;
         console.log(userNumber);
 
-    // Generare un numero random da 1 a 6 per il computer. 
+    // Create NPC random number from 1 to 6
         const pcNumber = Math.floor(Math.random() * 6) +1;
         console.log(pcNumber);
 
 
-    // Stabilire il vincitore, in base a chi fa il punteggio più alto.
+    // determine who will win
         let risultato;
 
         if (userNumber > pcNumber) {
@@ -34,6 +34,7 @@ gameStart.addEventListener("click",
         
         console.log(risultato);
 
+        //result  print on screen 
         document.getElementById("col-user").innerHTML = `Il tuo numero: ${userNumber}`;
 
         document.getElementById("col-result").innerHTML = risultato;
