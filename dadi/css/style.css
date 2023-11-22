@@ -1,3 +1,46 @@
 body{
     background-color: #333;
 }
+
+
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.row-title{
+    text-align: center;
+}
+
+#start{
+    width: 50%;
+    font-size: 40px;
+}
+
+.row-bet{
+    margin-top: 30px;
+    display: flex;
+    border: 1px solid white;
+    height: 300px;
+    justify-content: space-between;
+}
+
+#col-user,
+#col-pc{
+    width: 30%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    flex-wrap: wrap;
+}
+
+#col-result{
+    background-color: red;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
