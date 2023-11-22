@@ -2,52 +2,40 @@
 
 // Chiedi all’utente la sua email, controlla che sia nella lista di chi può accedere, stampa un messaggio appropriato sull’esito del controllo.
 
+const sendEmail = document.getElementById("send");
 
+let result= "";
 
-// Chiedi all’utente la sua email
-const userMail = prompt ("Inserisci la tua mail")
-console.log(userMail);
+// evento sul click
+sendEmail.addEventListener("click" ,
 
+    function(event) {
+      event.preventDefault();
+      // lista mail autorizzate
+      const allowedMails = ["mail1@gmail.com", "mail2@gmail.com", "mail3@gmail.com", "mail4@gmail.com", "mail5@gmail.com"];
 
-// lista di chi può accedere
-const mailsAllowed = ["mail1@gmail.com", "mail2@gmail.com", "mail3@gmail.com", "mail4@gmail.com", "mail5@gmail.com"];
+      // chiedere all'utente la mail e prenderne il valore
+      const userMail = document.getElementById("email").value;
 
-<<<<<<< HEAD
-=======
+      // variabile per l'accesso consentito valore partenza falso
+      let accessGranted = 0;
 
-// controllo e risultato acesso
-// if (mailsAllowed.includes(userMail)) {
-//     console.log('La tua mail è nella lista!! Benvenuto');
-//   } else {
-//     console.log('La tua mail non rientra nella lista!! Accesso negato');
-//   }
+      // Ciclo per controllo accesso
+      for (let i = 0; i < allowedMails.length; i++) {
+          if (userMail === allowedMails[i]) {
+              accessGranted = 1;
+          }
+      }
 
-for ( let i = 0; i <mailsAllowed.length; i++){
-
-    let controllo = mailsAllowed [i];
-    console.log(controllo);
-
-    if (userMail === controllo) {
-      console.log("access granted");
-    } 
-      console.log("mail denied");
-}
->>>>>>> refs/remotes/origin/main
-
-let accessGranted = 0;
-
-// Ciclo for per controllare l'accesso
-for (let i = 0; i < mailsAllowed.length; i++) {
-    if (userMail === mailsAllowed[i]) {
-
-        accessGranted = 1;     
+      // Risultato 
+      if (accessGranted) {
+          result = "Welcome";
+      } else {
+          result = "La tua mail non è nella lista";
+          
+      }   
+          // stampa su schermo
+          document.getElementById("alert").innerHTML = result
     }
-}
-
-// Stampa un messaggio appropriato sull'esito del controllo
-if (accessGranted) {
-    alert("Welcome");
-} else {
-    alert("Sorry your email is not on the list.");
-}
+)   
 
