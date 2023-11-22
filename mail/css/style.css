@@ -13,4 +13,40 @@ body{
     align-items: center;
 }
 
+.row.input{
+    margin-top: 50px;
+}
 
+input{
+   font-size: 40px;
+   text-align: center;
+   color: black;
+}
+
+input:focus{
+    border: 10px solid blue;
+}
+
+.col{
+    text-align: center;
+}
+
+#send{
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.result{
+    margin-top: 30px;
+    border: 1px solid white;
+    width: 50%;
+    height: 200px;  
+    background-color: white;
+    display: none;
+}
+
+.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

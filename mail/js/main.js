@@ -11,6 +11,7 @@ sendEmail.addEventListener("click" ,
 
     function(event) {
       event.preventDefault();
+
       // lista mail autorizzate
       const allowedMails = ["mail1@gmail.com", "mail2@gmail.com", "mail3@gmail.com", "mail4@gmail.com", "mail5@gmail.com"];
 
@@ -29,11 +30,15 @@ sendEmail.addEventListener("click" ,
 
       // Risultato 
       if (accessGranted) {
-          result = "Welcome";
+          result = "Welcome =)";
       } else {
-          result = "La tua mail non è nella lista";
+          result = "Sorry your email is not on the list!";
           
       }   
+
+      const showContainer = document.querySelector(".result");
+      showContainer.classList.add("active")
+
           // stampa su schermo
           document.getElementById("alert").innerHTML = result
     }
