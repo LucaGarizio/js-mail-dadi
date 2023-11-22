@@ -4,8 +4,6 @@
 
 
 
-
-
 // Chiedi all’utente la sua email
 const userMail = prompt ("Inserisci la tua mail")
 console.log(userMail);
@@ -14,11 +12,23 @@ console.log(userMail);
 // lista di chi può accedere
 const mailsAllowed = ["mail1@gmail.com", "mail2@gmail.com", "mail3@gmail.com", "mail4@gmail.com", "mail4@gmail.com"];
 
+
 // controllo e risultato acesso
-if (mailsAllowed.includes(userMail)) {
-    console.log('La tua mail è nella lista!! Benvenuto');
-  } else {
-    console.log('La tua mail non rientra nella lista!! Accesso negato');
-  }
+// if (mailsAllowed.includes(userMail)) {
+//     console.log('La tua mail è nella lista!! Benvenuto');
+//   } else {
+//     console.log('La tua mail non rientra nella lista!! Accesso negato');
+//   }
+
+for ( let i = 0; i <mailsAllowed.length; i++){
+
+    let controllo = mailsAllowed [i];
+    console.log(controllo);
+
+    if (userMail === controllo) {
+      console.log("access granted");
+    } 
+      console.log("mail denied");
+}
 
 // stampa un messaggio appropriato sull’esito del controllo
